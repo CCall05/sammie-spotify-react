@@ -1,0 +1,153 @@
+/* App.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* background-color: #181818; */
+  color: #ffffff;
+}
+.slide-in-bottom {
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+
+.song-title {
+  font-size: 6vw;
+  margin-bottom: 2vh;
+  
+}
+
+.artist-name {
+  font-size: 3vw;
+  margin-bottom: 2vh;
+  
+}
+
+.album-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60vw; /* Adjusted width for phone screens */
+  height: 30vh; /* Adjusted height for phone screens */
+  border-radius: 5vw; /* Adjusted border radius for phone screens */
+  transition: transform 0.5s ease;
+  position: relative;
+  margin-bottom: 5vh; /* Margin to separate album cover from controls */
+}
+.album-cover video {
+  object-fit: cover;
+}
+
+.slide-out {
+  transform: translateX(-100%);
+}
+
+.slide-in {
+  transform: translateX(0);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ /*  flex-direction: column; */ /* Arrange controls vertically on small screens */
+}
+
+.play-pause-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 2vh;
+}
+
+.play-pause-button img {
+  width: 10vw; /* Adjusted width for phone screens */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.next-button,
+.previous-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 2vh;
+}
+
+.next-button img,
+.previous-button img {
+  width: 5vw; /* Adjusted width for phone screens */
+  height: auto; /* Maintain aspect ratio */
+}
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #000;
+  border-radius: 5px 0 0 5px;
+}
+
+/* Media query for phone screens */
+@media only screen and (max-width: 600px) {
+  .album-cover {
+    width: 85vw;
+    height: 49vh;
+    left: 9.4%;
+    top: -30%;
+  }
+  
+  .progress-bar {
+    position: absolute;
+    left: 1.5%;
+    bottom: 100%;
+    width: calc(100vw - 40px);
+    margin: 0 20px;
+    
+  }
+
+  .song-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: absolute;
+    left: 9%;
+    bottom: 33%;
+   /*  transform: translate(-80%, 90%); */
+  }
+
+  .artist-name{
+    font-size: 13px;
+    margin-bottom: 10px;
+    position: absolute;
+    left: 9%;
+    bottom: 29.5%;
+    /* transform: translate(-80%,90%); */
+    color: #C6C6C8;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Arrange controls horizontally on small screens */
+    /* flex-direction: row; */
+    position: absolute;
+    bottom: 6%;
+    width: 100%;
+    left: 0%;
+  }
+
+  .play-pause-button img {
+    width: 14vw;
+  }
+
+  .next-button img,
+  .previous-button img {
+    width: 6.5vw;
+  }
+}
